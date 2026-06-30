@@ -8,12 +8,12 @@ import org.springframework.web.client.RestClient;
 @Configuration
 public class WeatherConfiguration {
 
-    @Value("${weather.base-api}")
+    @Value("${weather.baseurl}")
     private String baseUrl;
 
     @Bean
-    public RestClient weatherConfiguration(RestClient.Builder builder){
-        return builder.baseUrl(baseUrl)
+    public RestClient buildWeatherConfig(){
+        return RestClient.builder().baseUrl(baseUrl)
                 .defaultHeader("Content-Type", "application/json")
                 .build();
     }

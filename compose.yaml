@@ -1,0 +1,14 @@
+services:
+  db:
+    image: postgres:18
+    ports:
+      - "5432:5432"
+    volumes:
+      - weatherApi:/var/lib/postgres/18/data
+    environment:
+      POSTGRES_USER: test
+      POSTGRES_PASSWORD: wapi
+      POSTGRES_DATABASE: weather
+
+volumes:
+  weatherApi:
