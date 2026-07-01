@@ -29,6 +29,6 @@ public class LocationService {
                                 .build()
                 )
                 .retrieve()
-                .body(new ParameterizedTypeReference<>() {});
+                .body(new ParameterizedTypeReference<List<WeatherApiResponse.Location>>() {}); //or if its a class we can use the .class method
     }
 }
